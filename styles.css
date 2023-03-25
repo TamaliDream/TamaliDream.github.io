@@ -1,0 +1,185 @@
+@import url('https://fonts.googleapis.com/css2?family=Delicious+Handrawn&display=swap');
+
+body{
+    background-color: pink;
+    margin: 0;
+    background-repeat: no-repeat;
+    font-family: 'Delicious Handrawn', cursive;
+    font-size: 20px;
+}
+
+body::-webkit-scrollbar{
+    width: 8px;
+    background: none;
+}
+body::-webkit-scrollbar-thumb{
+    background-color: pink;
+    border-radius: 15px;
+}
+
+
+.cards {
+    display: grid;
+    grid-column: 1/-1;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    grid-gap: 2rem;
+    padding: 2rem;
+    padding-right: 4rem;
+    padding-left: 4rem;
+    perspective: 1000px;
+    margin-top: 15rem;
+}
+
+.framework-card {
+    background: #fff;
+    border-radius: 20px;
+    padding: 1rem;
+    text-align: center;
+    padding-top: 3rem;
+    position: relative;
+    transform-origin: top center;
+    --rotate: 10deg;
+    transform: rotateX(var(--rotate));
+    transition: transform 0.2s;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.framework-card:before {
+    right: auto;
+    left: 20px;
+}
+
+.framework-card:hover {
+    transform: rotateX(-20deg);
+}
+
+card:before,
+.framework-card:after {
+    content: '';
+    display: block;
+    width: 8px;
+    height: 8px;
+    background: pink;
+    border: 1px solid #000;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+    top: 15px;
+    right: 20px;
+    position: absolute;
+    border-radius: 50%;
+}
+
+.framework-card:before,
+.framework-card:after {
+    content: '';
+    display: block;
+    width: 8px;
+    height: 8px;
+    background: pink;
+    border: 1px solid #000;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+    top: 15px;
+    right: 20px;
+    position: absolute;
+    border-radius: 50%;
+}
+
+.framework-card img {
+    height: 80px;
+    width: 100%;
+    object-fit: contain;
+}
+
+
+img {
+    max-width: 100%;
+}
+
+.framework-card p {
+    font-weight: 900;
+}
+
+
+.wrap {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 12rem;
+  }
+  
+  .button {
+    min-width: 300px;
+    min-height: 60px;
+    font-size: 22px;
+    text-transform: uppercase;
+    letter-spacing: 1.3px;
+    font-weight: 700;
+    color: pink;
+    background: #f25db9;
+  background: linear-gradient(90deg, #f25db9 0%, #f25db9 100%);
+    border: none;
+    border-radius: 1000px;
+    box-shadow: 12px 12px 24px #f25db9;
+    transition: all 0.3s ease-in-out 0s;
+    cursor: pointer;
+    outline: none;
+    position: relative;
+    padding: 10px;
+    }
+  
+  button::before {
+  content: '';
+    border-radius: 1000px;
+    min-width: calc(300px + 12px);
+    min-height: calc(60px + 12px);
+    border: 6px solid #f25db9;
+    box-shadow: 0 0 60px #f25db9;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: all .3s ease-in-out 0s;
+  }
+  
+  .button:hover, .button:focus {
+    color: pink;
+    transform: translateY(-6px);
+  }
+  
+  button:hover::before, button:focus::before {
+    opacity: 1;
+  }
+  
+  button::after {
+    content: '';
+    width: 30px; height: 30px;
+    border-radius: 100%;
+    border: 6px solid #f25db9;
+    position: absolute;
+    z-index: -1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: ring 1.5s infinite;
+  }
+  
+  button:hover::after, button:focus::after {
+    animation: none;
+    display: none;
+  }
+  
+  @keyframes ring {
+    0% {
+      width: 30px;
+      height: 30px;
+      opacity: 1;
+    }
+    100% {
+      width: 300px;
+      height: 300px;
+      opacity: 0;
+    }
+  }
+
+  
